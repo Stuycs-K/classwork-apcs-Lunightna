@@ -5,12 +5,14 @@ public class MyArrays{
     int [] ary2a = {1};
     int [] ary3a = {1, 2};
     System.out.println(arrayToString(ary));
+    System.out.println(arrayToString(returnCopy(ary)));
     System.out.println(arrayToString(returnCopy(ary1a)));
     System.out.println(arrayToString(returnCopy(ary2a)));
     System.out.println(arrayToString(returnCopy(ary3a)));
     System.out.println(arrayToString(concatArray(ary3a,ary2a)));
     System.out.println(arrayToString(concatArray(ary1a,ary2a)));
     System.out.println(arrayToString(concatArray(ary,ary3a)));
+    System.out.println(arrayToString(concatArray(ary1a,ary1a)));
   }
 
   public static String arrayToString(int[]ary){
