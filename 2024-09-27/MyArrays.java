@@ -5,8 +5,12 @@ public class MyArrays{
     int [] ary2a = {1};
     int [] ary3a = {1, 2};
     System.out.println(arrayToString(ary));
-    System.out.println(returnCopy(ary));
-
+    System.out.println(arrayToString(returnCopy(ary1a)));
+    System.out.println(arrayToString(returnCopy(ary2a)));
+    System.out.println(arrayToString(returnCopy(ary3a)));
+    System.out.println(arrayToString(concatArray(ary3a,ary2a)));
+    System.out.println(arrayToString(concatArray(ary1a,ary2a)));
+    System.out.println(arrayToString(concatArray(ary,ary3a)));
   }
 
   public static String arrayToString(int[]ary){
@@ -31,6 +35,16 @@ public class MyArrays{
   }
 
   public static int[] concatArray(int[]ary1,int[]ary2){
-    return null;
-  }
+    int[] newarr = new int [ary1.length+ary2.length];
+    int count = 0;
+    for(int i=0; i<ary1.length;i++){
+      newarr[count]=ary1[i];
+      count++;
+    }
+    for(int i=0; i<ary2.length;i++){
+      newarr[count]=ary2[i];
+      count++;
+    }
+  return newarr;
+}
 }
