@@ -11,9 +11,9 @@ public static void main(String[] args){
   arr1 = {{1, 2, 3}, {4,5,6}}
   arr2 = {{7, 8, 9}, {0, 1}, {8}}
   arr3 = {{}};
-  System.out.println(arrToString(arrToString1(arr1)));
-  System.out.println(arrToString(arrToString1(arr2)));
-  System.out.println(arrToString(arrToString1(arr3)));
+  System.out.printlnarrToString(arr1));
+  System.out.println(arrToString(arr2));
+  System.out.println(arrToString(arr3));
 }
 public static String arrToString(int[]ary){
   String newstr = "[";
@@ -36,7 +36,16 @@ public static String arrToString(int[]ary){
   * You are encouraged to notice that you may want to re-use
   * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
   */
-public static String arrToString1(int[][]ary){
+public static String arrToString(int[][]ary){
+  String newStr = "[";
+  for (int i = 0; i < ary.length; i++) {
+    newStr += "[";
+    for (int idx = 0; idx < ary[i]; i++){
+
+    }
+    newStr += "]";
+  }
+  }
   //this should use arrToString(int[])
   return "";
 }
