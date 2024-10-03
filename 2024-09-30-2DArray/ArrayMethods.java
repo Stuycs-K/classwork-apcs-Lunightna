@@ -8,9 +8,15 @@ public class ArrayMethods {
 * Note the comma+space between values, and between values
 */
 public static void main(String[] args){
-  int[][] arr1 = {{1, 2, 3}, {4,5,6}};
-  int[][] arr2 = {{7, 8, 9}, {0, 1}, {8}};
+  int[][] arr1 = {{1, -2, 3}, {4,-5,6}};
+  int[][] arr2 = {{-7, 8, -9}, {0, -1}, {8}};
   int[][] arr3 = {{}};
+  System.out.println(arrToString(arr1));
+  System.out.println(arrToString(arr2));
+  System.out.println(arrToString(arr3));
+  replaceNegative(arr1);
+  replaceNegative(arr2);
+  replaceNegative(arr3);
   System.out.println(arrToString(arr1));
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(arr3));
