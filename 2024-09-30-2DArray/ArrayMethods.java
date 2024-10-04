@@ -14,12 +14,16 @@ public static void main(String[] args){
   System.out.println(arrToString(arr1));
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(arr3));
+  System.out.println(arr2DSum(arr1));
+  System.out.println(arr2DSum(arr2));
+  System.out.println(arr2DSum(arr3));
   replaceNegative(arr1);
   replaceNegative(arr2);
   replaceNegative(arr3);
   System.out.println(arrToString(arr1));
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(arr3));
+
 }
 
 public static String arrToString(int[]ary){
@@ -68,9 +72,16 @@ public static String arrToString(int[][]ary){
 
 
 /*Return the sum of all of the values in the 2D array */
-//public static int arr2DSum(int[][]nums){
+public static int arr2DSum(int[][]nums){
   //use a nested loop to solve this
-//}
+  int sum = 0;
+  for (int i = 0; i < nums.length; i++){
+    for (int idx = 0; idx < nums[i].length; idx ++){
+      sum += nums[i][idx];
+    }
+  }
+  return sum;
+}
 
 /**Rotate an array by returning a new array with the rows and columns swapped.
   * You may assume the array is rectangular and neither rows nor cols is 0.
