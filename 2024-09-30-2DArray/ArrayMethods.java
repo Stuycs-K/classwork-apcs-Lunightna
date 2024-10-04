@@ -11,19 +11,23 @@ public static void main(String[] args){
   int[][] arr1 = {{1, -2, 3}, {4,-5,6}};
   int[][] arr2 = {{-7, 8, -9}, {0, -1}, {8}};
   int[][] arr3 = {{}};
-  System.out.println(arrToString(arr1));
+  int[][] arr4 = {{1, 2, 3}, {4, 5, 6}};
+  int[][] arr5 = {{1, 2}, {3, 4}, {5, 6}};
+  System.out.println(arrToString(arr1));//test arrToString
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(arr3));
-  System.out.println(arr2DSum(arr1));
+  System.out.println(arr2DSum(arr1));//test arr2Dsum
   System.out.println(arr2DSum(arr2));
   System.out.println(arr2DSum(arr3));
-  replaceNegative(arr1);
+  replaceNegative(arr1);//test replaceNegative
   replaceNegative(arr2);
   replaceNegative(arr3);
   System.out.println(arrToString(arr1));
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(arr3));
-
+  System.out.println(arrToString(swapRC(arr1)));//test swapRC
+  System.out.println(arrToString(swapRC(arr4)));
+  System.out.println(arrToString(swapRC(arr5)));
 }
 
 public static String arrToString(int[]ary){
@@ -88,7 +92,13 @@ public static int arr2DSum(int[][]nums){
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
 public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+  int[][] newarr = new int[nums[0].length][nums.length];
+  for(int i = 0; i<nums.length; i++){
+    for(int idx = 0; idx<nums[0].length; idx++){
+      newarr[idx][i] = nums[i][idx];
+    }
+  }
+  return newarr;
 }
 
 //3. Modify a given 2D array of integer as follows:
