@@ -28,6 +28,18 @@ public static void main(String[] args){
   System.out.println(arrToString(swapRC(arr1)));//test swapRC
   System.out.println(arrToString(swapRC(arr4)));
   System.out.println(arrToString(swapRC(arr5)));
+  int[][] copyarr1 = copyarray(arr1);
+  System.out.println(arrToString(arr1));
+  System.out.println(arrToString(copyarr1));
+  arr1[0][0] = 2;
+  System.out.println(arrToString(arr1));
+  System.out.println(arrToString(copyarr1));
+  int[][] copyarr2 = copyarray(arr2);
+  System.out.println(arrToString(arr2));
+  System.out.println(arrToString(copyarr2));
+  arr2[0][0] = 2;
+  System.out.println(arrToString(arr2));
+  System.out.println(arrToString(copyarr2));
 }
 
 public static String arrToString(int[]ary){
@@ -126,7 +138,20 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
-public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+public static int[] copyinner(int[]nums){
+  int[] copyrow = new int[nums.length];
+  for (int i=0; i<nums.length; i++){
+    copyrow[i] = nums[i];
+  } 
+  return copyrow;
+} 
+
+public static int[][] copyarray(int[][] nums){
+  int[][] copy = new int[nums.length][];
+  for (int i = 0; i<nums.length; i++){
+    copy[i] = copyinner(nums[i]);
+  }
+  return copy;//placeholder so it compiles
 }
+
 }
