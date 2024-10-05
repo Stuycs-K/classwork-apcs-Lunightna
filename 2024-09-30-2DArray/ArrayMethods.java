@@ -28,13 +28,13 @@ public static void main(String[] args){
   System.out.println(arrToString(swapRC(arr1)));//test swapRC
   System.out.println(arrToString(swapRC(arr4)));
   System.out.println(arrToString(swapRC(arr5)));
-  int[][] copyarr1 = copyarray(arr1);
-  System.out.println(arrToString(arr1));
-  System.out.println(arrToString(copyarr1));
-  arr1[0][0] = 2;
-  System.out.println(arrToString(arr1));
-  System.out.println(arrToString(copyarr1));
-  int[][] copyarr2 = copyarray(arr2);
+  int[][] copyarr1 = copyrow(arr1); //test copy 
+  System.out.println(arrToString(arr1)); //og
+  System.out.println(arrToString(copyarr1)); // copied
+  arr1[0][0] = 2; //change
+  System.out.println(arrToString(arr1)); //og should change
+  System.out.println(arrToString(copyarr1)); //og should stay the same
+  int[][] copyarr2 = copy(arr2);
   System.out.println(arrToString(arr2));
   System.out.println(arrToString(copyarr2));
   arr2[0][0] = 2;
@@ -146,7 +146,7 @@ public static int[] copyinner(int[]nums){
   return copyrow;
 } 
 
-public static int[][] copyarray(int[][] nums){
+public static int[][] copy(int[][] nums){
   int[][] copy = new int[nums.length][];
   for (int i = 0; i<nums.length; i++){
     copy[i] = copyinner(nums[i]);
