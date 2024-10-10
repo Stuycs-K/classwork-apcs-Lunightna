@@ -19,32 +19,32 @@ public class ArrayDemo{
     int[][] array3 = {{}};
     int[][] array4 = {{1, 2, 3}, {4, 5, 6}};
     int[][] array5 = {{1, 2}, {3, 4}, {5, 6}};
-    System.out.println(arr2DSum(arr2));//test arr2Dsum
-    System.out.println(arr2DSum(arr3));
-    System.out.println(arr2DSum(arr4));
+    System.out.println("Sum:" + arr2DSum(arr2));//test arr2Dsum
+    System.out.println("Sum:" + arr2DSum(arr3));
+    System.out.println("Sum:" + arr2DSum(arr4));
     replaceNegative(array1);//test replaceNegative
     replaceNegative(array2);
     replaceNegative(array3);
-    System.out.println(arrToString(array1));
-    System.out.println(arrToString(array2));
-    System.out.println(arrToString(array3));
-    System.out.println(arrToString(swapRC(array1)));//test swapRC
-    System.out.println(arrToString(swapRC(array4)));
-    System.out.println(arrToString(swapRC(array5)));
+    System.out.println("Array as String:" + arrToString(array1));
+    System.out.println("Array as String:" + arrToString(array2));
+    System.out.println("Array as String:" + arrToString(array3));
+    System.out.println("Swaped rows and columns of array:" + arrToString(swapRC(array1)));//test swapRC
+    System.out.println("Swaped rows and columns of array:" + arrToString(swapRC(array4)));
+    System.out.println("Swaped rows and columns of array:" + arrToString(swapRC(array5)));
     int[][] copyarr1 = copy(array1); //test copy 
-    System.out.println(arrToString(array1)); //og
-    System.out.println(arrToString(copyarr1)); // copied
+    System.out.println("original:" + arrToString(array1)); //og
+    System.out.println("copy" + arrToString(copyarr1)); // copied
     array1[0][0] = 2; //change
-    System.out.println(arrToString(array1)); //og should change
-    System.out.println(arrToString(copyarr1)); //og should stay the same
+    System.out.println("original changed:" + arrToString(array1)); //og should change
+    System.out.println("copy stays same:" + arrToString(copyarr1)); //og should stay the same
     int[][] copyarr2 = copy(arr2);
-    System.out.println(arrToString(array2));
-    System.out.println(arrToString(copyarr2));
+    System.out.println("original:" + arrToString(array2));
+    System.out.println("copy" + arrToString(copyarr2));
     array2[0][0] = 2;
-    System.out.println(arrToString(array2));
-    System.out.println(arrToString(copyarr2));
-    System.out.println(htmlTable(arr2)); //testing htmlTable function
-    System.out.println(htmlTable(arr4));
+    System.out.println("original changed:" +arrToString(array2));
+    System.out.println("copy stays same:" + arrToString(copyarr2));
+    System.out.println("html table:" + htmlTable(arr2)); //testing htmlTable function
+    System.out.println("html table:" + htmlTable(arr4));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
