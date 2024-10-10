@@ -43,6 +43,8 @@ public class ArrayDemo{
     array2[0][0] = 2;
     System.out.println(arrToString(array2));
     System.out.println(arrToString(copyarr2));
+    System.out.println(htmlTable(arr2));
+    System.out.println(htmlTable(arr4));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -160,6 +162,20 @@ public static int[][] swapRC(int[][]nums){
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String newstr = "<table";
+    for (int i = 0; i<nums.length;i++){
+      newstr+="<tr>";
+      newstr+=htmlrows(nums[i]);
+      newstr+="</tr>";
+    }
+    newstr += "</table>";
+    return newstr;
+  }
+    public static String htmlrows(int[]nums){
+    String newstr = "";
+      for (int i=0; i<nums.length;i++){
+          newstr = newstr + ("<td>" + nums[i] + "</td>");
+      }
+    return newstr;
   }
 }
