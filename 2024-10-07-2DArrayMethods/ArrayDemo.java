@@ -14,6 +14,35 @@ public class ArrayDemo{
     int[][] arr4 = {{1, 0, 3, 0}, {0, 4}, {5, 6, 0}};
     System.out.println("Zero: " + countZeros2D(arr3));
     System.out.println("Zero: " + countZeros2D(arr4));
+    int[][] array1 = {{1, -2, 3}, {4,-5,6}};
+    int[][] array2 = {{-7, 8, -9}, {0, -1}, {8}};
+    int[][] array3 = {{}};
+    int[][] array4 = {{1, 2, 3}, {4, 5, 6}};
+    int[][] array5 = {{1, 2}, {3, 4}, {5, 6}};
+    System.out.println(arr2DSum(arr2));//test arr2Dsum
+    System.out.println(arr2DSum(arr3));
+    System.out.println(arr2DSum(arr4));
+    replaceNegative(array1);//test replaceNegative
+    replaceNegative(array2);
+    replaceNegative(array3);
+    System.out.println(arrToString(array1));
+    System.out.println(arrToString(array2));
+    System.out.println(arrToString(array3));
+    System.out.println(arrToString(swapRC(array1)));//test swapRC
+    System.out.println(arrToString(swapRC(array4)));
+    System.out.println(arrToString(swapRC(array5)));
+    int[][] copyarr1 = copy(array1); //test copy 
+    System.out.println(arrToString(array1)); //og
+    System.out.println(arrToString(copyarr1)); // copied
+    array1[0][0] = 2; //change
+    System.out.println(arrToString(array1)); //og should change
+    System.out.println(arrToString(copyarr1)); //og should stay the same
+    int[][] copyarr2 = copy(arr2);
+    System.out.println(arrToString(array2));
+    System.out.println(arrToString(copyarr2));
+    array2[0][0] = 2;
+    System.out.println(arrToString(array2));
+    System.out.println(arrToString(copyarr2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -62,34 +91,67 @@ public class ArrayDemo{
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
-  public static int arr2DSum(int[][]nums){
-    return 0;
+public static int arr2DSum(int[][]nums){
+  //use a nested loop to solve this
+  int sum = 0;
+  for (int i = 0; i < nums.length; i++){
+    for (int idx = 0; idx < nums[i].length; idx ++){
+      sum += nums[i][idx];
+    }
   }
+  return sum;
+}
 
   //3. Modify a given 2D array of integer as follows:
   //Replace all the negative values:
   //-When the row number is the same as the column number replace
   //that negative with the value 1
   //-All other negatives replace with 0
-  public static void replaceNegative(int[][] vals){
-
+public static void replaceNegative(int[][] vals){
+  for(int i = 0; i < vals.length; i++) {
+    for(int idx = 0; idx < vals[i].length; idx++) {
+      if (i == idx && vals[i][idx] < 0) {
+        vals[i][idx] = 1;
+      }
+      else if (vals[i][idx]<0){
+        vals[i][idx] = 0;
+      }
+    }
   }
+}
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.
   //DO NOT use any built in methods that "copy" an array.
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
-  public static int[][] copy(int[][] nums){
-    return new int[1][1];
-  }
+public static int[] copyinner(int[]nums){
+  int[] copyrow = new int[nums.length];
+  for (int i=0; i<nums.length; i++){
+    copyrow[i] = nums[i];
+  } 
+  return copyrow;
+} 
 
+public static int[][] copy(int[][] nums){
+  int[][] copy = new int[nums.length][];
+  for (int i = 0; i<nums.length; i++){
+    copy[i] = copyinner(nums[i]);
+  }
+  return copy;//placeholder so it compiles
+}
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
-  public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+public static int[][] swapRC(int[][]nums){
+  int[][] newarr = new int[nums[0].length][nums.length];
+  for(int i = 0; i<nums.length; i++){
+    for(int idx = 0; idx<nums[0].length; idx++){
+      newarr[idx][i] = nums[i][idx];
+    }
   }
+  return newarr;
+}
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
   //   tr tags around each row, and td tags around each value.
