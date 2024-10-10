@@ -43,7 +43,7 @@ public class ArrayDemo{
     array2[0][0] = 2;
     System.out.println(arrToString(array2));
     System.out.println(arrToString(copyarr2));
-    System.out.println(htmlTable(arr2));
+    System.out.println(htmlTable(arr2)); //testing htmlTable function
     System.out.println(htmlTable(arr4));
   }
 
