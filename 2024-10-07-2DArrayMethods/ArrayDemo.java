@@ -10,7 +10,6 @@ public class ArrayDemo{
     System.out.println("My: " + arrToString(arr1));
     System.out.println("Builtin: " + Arrays.toString(arr1));
     System.out.println("My: " + arrToString(arr2));
-    System.out.println("Builtin: " + Arrays.toString(arr2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -33,16 +32,7 @@ public class ArrayDemo{
   public static String arrToString(int[][]ary){
     String newStr = "[";
     for (int i = 0; i < ary.length; i++) {
-      newStr += "[";
-      for (int idx = 0; idx < ary[i].length; idx++){
-        if(idx==ary[i].length-1){
-          newStr += ary[i][idx];
-        }
-        else{
-          newStr = newStr + (ary[i][idx] + ", ");
-        }
-      }
-      newStr += "]";
+      newStr += arrToString(ary[i]);
       if (i < ary.length - 1){
         newStr += ", ";
       }
