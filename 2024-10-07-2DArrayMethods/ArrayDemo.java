@@ -11,7 +11,9 @@ public class ArrayDemo{
     System.out.println("Builtin: " + Arrays.toString(arr1));
     System.out.println("My: " + arrToString(arr2));
     int[][] arr3 = {{0}, {0, 4}, {5, 6, 0}};
+    int[][] arr4 = {{1, 0, 3, 0}, {0, 4}, {5, 6, 0}};
     System.out.println("Zero: " + countZeros2D(arr3));
+    System.out.println("Zero: " + countZeros2D(arr4));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
