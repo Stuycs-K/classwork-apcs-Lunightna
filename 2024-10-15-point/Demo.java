@@ -23,5 +23,11 @@ public class Demo{
     System.out.println( distance(p4,p5));
     System.out.println( Point.distance(p5,p4));
     System.out.println( p5.distanceTo(p4));
+    Point a = new Point(0,0);
+    Point b = new Point(1,0);
+    Point c = new Point(0.5, Math.sqrt(0.75));
+    System.out.println( distance(a,b));
+    System.out.println( distance(a,c));
+    System.out.println( distance(b,c));
   }
 }
