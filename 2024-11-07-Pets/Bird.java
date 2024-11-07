@@ -8,7 +8,9 @@ public class Bird extends Animal {
     //In order to construct the Bird you must first call the superclass constructor
     //This is done by saying: super(parameters)
     //e.g. super("Doug",10,"Squaaaak!");
-
+    super(noise, age, name);
+    this.height = height;
+    this.color = color;
   }
 
 
@@ -22,9 +24,11 @@ public class Bird extends Animal {
     I am ? inches tall
   */
   //You can call the old method using super.speak();
-  //public void speak(){}
-
-
+  public void speak(){
+    super.speak();
+    System.out.println("My feathers are colored " + color + ".");
+    System.out.println("I am " + height + " inches tall.");
+  }
 
   //7:Override the getName() method so that a bid's name is "The Mighty NAME" instead of "NAME"
   //e.g. "The Mighty Polly" instead of just "Polly"
