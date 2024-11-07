@@ -16,10 +16,12 @@ public class Animal {
   I am ? years old.
   I say ?.
 
-  Note: you MUST use getName() getNoise() here! You will see why later.
+  Note: you MUST use getName() getAge() getNoise() here! You will see why later.
   */
   public void speak(){
-
+    System.out.println("My name is " + getName() + ".");
+    System.out.println("I am " + getAge() + ".");
+    System.out.println("I say " + getNoise() + ".");
   }
 
   public String getName(){
@@ -27,5 +29,8 @@ public class Animal {
   }
   public String getNoise(){
     return noise;
+  }
+  public int getAge(){
+    return age;
   }
 }
