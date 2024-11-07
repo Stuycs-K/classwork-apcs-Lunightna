@@ -4,7 +4,9 @@ public class Animal {
   private String name;
 
   public Animal(String noise, int age, String name){
-    //initialize the values (hint use this.varname to clarify)
+    this.noise = noise;
+    this.age = age;
+    this.name = name;
   }
 
   //2.
