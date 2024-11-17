@@ -7,5 +7,8 @@ public class Driver{
     ArrayListPractice.replaceEmpty(arr);
     System.out.println(arr);
     System.out.println(ArrayListPractice.makeReversedList(arr));
+    ArrayList<String> arr1 = ArrayListPractice.createRandomArray(10);
+    System.out.println(arr1);
+    System.out.println(ArrayListPractice.mixLists(arr, arr1));
   }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class ArrayListPractice{
   public static ArrayList<String>createRandomArray (int size){
     ArrayList<String> arr = new ArrayList<>(size);
-    for (int i = 0; i < size; i++) {
+    for(int i = 0; i < size; i++) {
       arr.add("" + (int)(Math.random() * 10));
       if (arr.get(i).equals("0")) {
         arr.set(i, "");
@@ -25,10 +25,43 @@ public static void replaceEmpty(ArrayList<String> original){
 public static ArrayList<String> makeReversedList(ArrayList<String> original){
   //return a new ArrayList that is in the reversed order of the original.
   ArrayList<String> arr = new ArrayList<String>(original.size());
-  for (int i = original.size()-1; i>-1; i--){
+  for(int i = original.size()-1; i>-1; i--){
     arr.add(original.get(i));
   }
   return arr;
 } 
+public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+  ArrayList<String> arr = new ArrayList<String>(a.size()+b.size());
+  if(a.size()>b.size()){
+    for(int i = 0; i<b.size(); i++){
+      arr.add(a.get(i));
+      arr.add(b.get(i));
+      }
+      for(int idx = b.size(); idx<a.size(); idx++){
+        arr.add(a.get(idx));
+      }
+  }
+  if(b.size()>a.size()){
+    for(int i = 0; i<a.size(); i++){
+      arr.add(a.get(i));
+      arr.add(b.get(i));
+      }
+      for(int idx = a.size(); idx<b.size(); idx++){
+        arr.add(a.get(idx));
+      }
+  }
+  else{
+    for(int i = 0; i<a.size(); i++){
+      arr.add(a.get(i));
+      arr.add(b.get(i));
+      }
+  }
+
+  return arr;
+
+  }
 
 }
