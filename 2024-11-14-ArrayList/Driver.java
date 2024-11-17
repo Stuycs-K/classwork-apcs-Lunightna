@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Driver{
   public static void main(String[] args) {
-    System.out.println(ArrayListPractice.createRandomArray(10));
-    ArrayList<String> arr = new ArrayList<>(10);
-    arr.add("1");
+    ArrayList<String> arr = ArrayListPractice.createRandomArray(10);
+    System.out.println(arr);
+    ArrayListPractice.replaceEmpty(arr);
     System.out.println(arr);
   }
 }
