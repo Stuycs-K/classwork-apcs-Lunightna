@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 
 public class day2{
   public static void main(String[] args) {
-    System.out.println(bathroomA("taxicab.txt"));
+    bathroomA("bathroom.txt");
     }
 
   public static String bathroomA(String filename){
@@ -13,13 +13,13 @@ public class day2{
       Scanner input = new Scanner(file);
       while(input.hasNextLine()){
         String a = input.next();
-        a.split();
-        return a;
+        System.out.println(a);
       }
     }
     catch(FileNotFoundException ex){
       System.out.println("File not found");
-      return "";
+      return null;
     }
+    return null;
   }
 }
