@@ -11,10 +11,41 @@ public class day2{
     File file = new File(filename);
     try{
       Scanner input = new Scanner(file);
+      int x = 1;
+      int y = 1;
+      String code = "";
+      ArrayList<Integer> keypad = new ArrayList<Integer>({1, 4, 7}, {2, 5, 8}, {3,6,9});
       while(input.hasNextLine()){
         String a = input.next();
-        System.out.println(a);
+        for(int i = 0; i<a.length;i++){
+          if(a[i]=='R'){
+            x++;
+            if(x>2){
+              x--;
+            }
+          }
+          if(a[i]=='L'){
+            x--;
+            if(x<0){
+              x++;
+            }
+          }
+          if(a[i]=='U'){
+            y--;
+            if(y<0){
+              y++;
+            }
+          }
+          if(a[i]=='D'){
+            y++;
+            if(y>2){
+              y--;
+            }
+          }
+        }
+        code = code + "" + keypad[x][y];
       }
+      return code;
     }
     catch(FileNotFoundException ex){
       System.out.println("File not found");
