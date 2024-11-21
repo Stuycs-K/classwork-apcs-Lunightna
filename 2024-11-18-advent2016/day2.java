@@ -14,29 +14,29 @@ public class day2{
       int x = 1;
       int y = 1;
       String code = "";
-      ArrayList<Integer> keypad = new ArrayList<Integer>({1, 4, 7}, {2, 5, 8}, {3,6,9});
+      int[][] keypad = {{1, 4, 7}, {2, 5, 8}, {3,6,9}};
       while(input.hasNextLine()){
         String a = input.next();
-        for(int i = 0; i<a.length;i++){
-          if(a[i]=='R'){
+        for(int i = 0; i<a.length();i++){
+          if(a.charAt(i)=='R'){
             x++;
             if(x>2){
               x--;
             }
           }
-          if(a[i]=='L'){
+          if(a.charAt(i)=='L'){
             x--;
             if(x<0){
               x++;
             }
           }
-          if(a[i]=='U'){
+          if(a.charAt(i)=='U'){
             y--;
             if(y<0){
               y++;
             }
           }
-          if(a[i]=='D'){
+          if(a.charAt(i)=='D'){
             y++;
             if(y>2){
               y--;
@@ -49,7 +49,6 @@ public class day2{
     }
     catch(FileNotFoundException ex){
       System.out.println("File not found");
-      return null;
     }
     return null;
   }
