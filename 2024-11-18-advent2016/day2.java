@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 
 public class day2{
   public static void main(String[] args) {
-    bathroomA("bathroom.txt");
+    System.out.println(bathroomA("bathroom.txt"));
     }
 
   public static String bathroomA(String filename){
