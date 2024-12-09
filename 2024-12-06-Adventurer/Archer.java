@@ -2,14 +2,12 @@ public class Archer extends Adventurer{
     private int mana;
     private int manaCapacity;
     private int arrowCount;
-    private int bowDurability;
 
     public Archer(String name, int hp){
         super(name, hp);
         mana = 100;
         manaCapacity = 100;
         arrowCount = 10;
-        bowDurability = 100;
     }
 
     public String getSpecialName(){
@@ -39,7 +37,6 @@ public class Archer extends Adventurer{
     public String attack(Adventurer other){
         int damage = (int)(Math.sqrt(mana/arrowCount));
         arrowCount--;
-        bowDurability -= 10;
         other.applyDamage(damage);
         return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
     }
@@ -54,7 +51,6 @@ public class Archer extends Adventurer{
     public String support(){
         int healme = (mana/10);
         setHP(getHP() + healme);
-        bowDurability += 10;
         return getName() + " self healed " + healme + "hp, increased bow durability by 10hp";
     }
 
@@ -63,7 +59,6 @@ public class Archer extends Adventurer{
             int damage = (int)(3*Math.sqrt(mana/arrowCount));
             other.applyDamage(damage);
             mana -= 30;
-            bowDurability -= 50;
             return getName() + " dealt " + damage + "hp on " + other.getName() + " with a crazy attack";
         }
         else{
