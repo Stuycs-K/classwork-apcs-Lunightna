@@ -57,9 +57,10 @@ public class Archer extends Adventurer{
 
     public String specialAttack(Adventurer other){
         if(mana>20){
-            int damage = (int)(2*Math.sqrt(mana/arrowCount));
+            int damage = (int)(3*Math.sqrt(mana/arrowCount));
             other.applyDamage(damage);
-            mana -= 20;
+            mana -= 30;
+            bowDurability -= 50;
             return "dealt " + damage + " on " + other.getName() + " with a crazy attack";
         }
         else{
