@@ -37,21 +37,34 @@ public class Archer extends Adventurer{
     }
 
     public String attack(Adventurer other){
-        int damage = Math.sqrt(mana/arrowCount);
+        int damage = (int)(Math.sqrt(mana/arrowCount));
         arrowCount--;
         bowDurability -= 10;
-        return getName() + "dealt " + damage + " on " + other.getName();
+        return getName() + "dealt " + damage + " on " + other.getName() + " with a normal attack";
     }
 
     public String support(Adventurer other){
         int heal = (mana/10);
+        return "healed " + other.getName() + " " + heal + " hp";
     }
 
     public String support(){
         int healme = (mana/10);
         setHP(getHP() + healme);
         bowDurability += 10;
-        return "healed" + healme + ", increased bow durability by 10";
+        return "self-healed" + healme + ", increased bow durability by 10";
+    }
+
+    public String specialAttack(Adventurer other){
+        if(mana>20){
+            int damage = (int)(2*Math.sqrt(mana/arrowCount));
+            other.applyDamage(damage);
+            mana -= 20;
+            return "dealt " + damage + " on " + other.getName() + " with a crazy attack";
+        }
+        else{
+            return "insuffient mana";
+        }
     }
 
 
