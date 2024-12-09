@@ -35,16 +35,23 @@ public class Archer extends Adventurer{
     }
 
     public String attack(Adventurer other){
-        int damage = (int)(Math.sqrt(mana/arrowCount));
-        arrowCount--;
-        other.applyDamage(damage);
-        return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
+        if(mana>3 && arrowCount >1){
+            int damage = (int)(Math.sqrt(mana/arrowCount));
+            arrowCount--;
+            other.applyDamage(damage);
+            setSpecial(mana - 10);
+            return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
+        }
+        else{
+            return "insuffient mana or arrows";
+        }
+
     }
 
     public String support(Adventurer other){
         int heal = (mana/10);
         other.setHP(Math.min(other.getHP()+heal, other.getmaxHP()));
-        return getName() + "healed " + other.getName() + " " + heal + " hp";
+        return getName() + " healed " + other.getName() + " " + heal + " hp";
     }
 
     public String support(){
@@ -57,7 +64,7 @@ public class Archer extends Adventurer{
         if(mana>20 && arrowCount>3){
             int damage = (int)(3*Math.sqrt(mana/arrowCount));
             other.applyDamage(damage);
-            mana -= 30;
+            setSpecial(mana - 30);
             arrowCount -= 3;
             return getName() + " dealt " + damage + "hp on " + other.getName() + " with a crazy attack";
         }
