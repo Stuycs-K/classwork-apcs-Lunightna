@@ -28,6 +28,6 @@ public class Archer extends Adventurer{
     }
 
     public int getSpecialMax(){
-        return Math.pow(10, 7);
+        return 1000000;
     }
 }
