@@ -1,5 +1,19 @@
 public class Driver{
   public static void main(String[] args) {
-    Adventurer p1 = new Mage("Night", 10);
+    Adventurer p1 = new Archer("Night", 100);
+    Adventurer p2 = new Archer("Day", 100);
+    int round = 1;
+
+    System.out.println(p1.getName() + " VS. " + p2.getName());
+    System.out.println("Round " + round);
+    System.out.println(p1.attack(p2));
+    System.out.println(p2.specialAttack(p1));
+    System.out.println(p1.getName() + " hp: " + p1.getHP() + "; " + p2.getName() + " hp: " + p2.getHP());
+    round++;
+    System.out.println("Round " + round);
+    System.out.println(p1.support());
+    System.out.println(p2.support());
+    System.out.println(p1.getName() + " hp: " + p1.getHP() + "; " + p1.getName() + " hp: " + p2.getHP());
+
   }
 }

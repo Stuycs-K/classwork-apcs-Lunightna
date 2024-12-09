@@ -40,19 +40,22 @@ public class Archer extends Adventurer{
         int damage = (int)(Math.sqrt(mana/arrowCount));
         arrowCount--;
         bowDurability -= 10;
-        return getName() + "dealt " + damage + " on " + other.getName() + " with a normal attack";
+        other.applyDamage(damage);
+        return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
     }
 
+@Override
     public String support(Adventurer other){
         int heal = (mana/10);
-        return "healed " + other.getName() + " " + heal + " hp";
+        other.setHP(Math.min(other.getHP()+heal, other.getmaxHP()));
+        return getName() + "healed " + other.getName() + " " + heal + " hp";
     }
 
     public String support(){
         int healme = (mana/10);
         setHP(getHP() + healme);
         bowDurability += 10;
-        return "self-healed" + healme + ", increased bow durability by 10";
+        return getName() + " self healed " + healme + "hp, increased bow durability by 10hp";
     }
 
     public String specialAttack(Adventurer other){
@@ -61,7 +64,7 @@ public class Archer extends Adventurer{
             other.applyDamage(damage);
             mana -= 30;
             bowDurability -= 50;
-            return "dealt " + damage + " on " + other.getName() + " with a crazy attack";
+            return getName() + " dealt " + damage + "hp on " + other.getName() + " with a crazy attack";
         }
         else{
             return "insuffient mana";
