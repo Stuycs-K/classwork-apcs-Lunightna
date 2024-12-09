@@ -9,11 +9,12 @@ public class Driver{
     System.out.println(p1.attack(p2));
     System.out.println(p2.specialAttack(p1));
     System.out.println(p1.getName() + " hp: " + p1.getHP() + "; " + p2.getName() + " hp: " + p2.getHP());
+    System.out.println(p1.getName() + " arrowCount: " + ((Archer) p1).getArrow() + "; " + p2.getName() + " arrowCount: " + (((Archer)p2).getArrow()));
     round++;
     System.out.println("Round " + round);
     System.out.println(p1.support());
     System.out.println(p2.support());
-    System.out.println(p1.getName() + " hp: " + p1.getHP() + "; " + p1.getName() + " hp: " + p2.getHP());
+    System.out.println(p1.getName() + " hp: " + p1.getHP() + "; " + p2.getName() + " hp: " + p2.getHP());
 
   }
 }

@@ -41,7 +41,6 @@ public class Archer extends Adventurer{
         return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
     }
 
-@Override
     public String support(Adventurer other){
         int heal = (mana/10);
         other.setHP(Math.min(other.getHP()+heal, other.getmaxHP()));
@@ -50,21 +49,25 @@ public class Archer extends Adventurer{
 
     public String support(){
         int healme = (mana/10);
-        setHP(getHP() + healme);
-        return getName() + " self healed " + healme + "hp, increased bow durability by 10hp";
+        setHP(Math.min(getHP()+healme, getmaxHP()));
+        return getName() + " self healed " + healme + "hp";
     }
 
     public String specialAttack(Adventurer other){
-        if(mana>20){
+        if(mana>20 && arrowCount>3){
             int damage = (int)(3*Math.sqrt(mana/arrowCount));
             other.applyDamage(damage);
             mana -= 30;
+            arrowCount -= 3;
             return getName() + " dealt " + damage + "hp on " + other.getName() + " with a crazy attack";
         }
         else{
-            return "insuffient mana";
+            return "insuffient mana or arrows";
         }
     }
 
+  public int getArrow(){
+      return arrowCount;
+  }
 
 }
