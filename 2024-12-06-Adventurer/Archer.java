@@ -39,7 +39,7 @@ public class Archer extends Adventurer{
             int damage = (int)(Math.sqrt(mana/arrowCount));
             arrowCount--;
             other.applyDamage(damage);
-            setSpecial(mana - 10);
+            setSpecial(mana - 8);
             return getName() + " dealt " + damage + "hp on " + other.getName() + " with a normal attack";
         }
         else{
@@ -57,6 +57,7 @@ public class Archer extends Adventurer{
     public String support(){
         int healme = (mana/10);
         setHP(Math.min(getHP()+healme, getmaxHP()));
+        setSpecial(mana+10);
         return getName() + " self healed " + healme + "hp";
     }
 
