@@ -18,11 +18,11 @@ public class fib{
       idx = 0;
       makeWords(number, "", alphabet.subtring(1));
     }
-    for(int i = 0; i<alphabet.length();i++){
-      String letter = alphabet.charAt(i);
-    }
     else{
-      System.out.println(result + alphabet.substring(idx));
+      for(int i = 0; i<alphabet.length();i++){
+        String letter = alphabet.charAt(i);
+      }
+      System.out.println(result + letter));
       remainingLetters--;
     }
   }
