@@ -19,7 +19,7 @@ public class fib{
       makeWords(number, "", alphabet.subtring(1));
     }
     for(int i = 0; i<alphabet.length();i++){
-      leter = alphabet.charAt(i);
+      String letter = alphabet.charAt(i);
     }
     else{
       System.out.println(result + alphabet.substring(idx));
